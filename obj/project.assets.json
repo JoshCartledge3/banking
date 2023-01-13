@@ -8,23 +8,23 @@
     "net6.0": []
   },
   "packageFolders": {
-    "C:\\Users\\jcartledge\\.nuget\\packages\\": {},
+    "C:\\Users\\chadr\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\jcartledge\\Documents\\Test\\BankingMainApplication\\BankingMainApplication.csproj",
+      "projectUniqueName": "C:\\Users\\chadr\\Source\\Repos\\banking\\BankingMainApplication.csproj",
       "projectName": "BankingMainApplication",
-      "projectPath": "C:\\Users\\jcartledge\\Documents\\Test\\BankingMainApplication\\BankingMainApplication.csproj",
-      "packagesPath": "C:\\Users\\jcartledge\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\jcartledge\\Documents\\Test\\BankingMainApplication\\obj\\",
+      "projectPath": "C:\\Users\\chadr\\Source\\Repos\\banking\\BankingMainApplication.csproj",
+      "packagesPath": "C:\\Users\\chadr\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\chadr\\Source\\Repos\\banking\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\jcartledge\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\chadr\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -67,7 +67,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
       }
     }
   }
