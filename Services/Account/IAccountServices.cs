@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BankingMainApplication
+namespace BankingMainApplication.Services.Account
 {
-    public class Account
+    internal interface Interface1
     {
     }
 }

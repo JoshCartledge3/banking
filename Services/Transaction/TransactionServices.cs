@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BankingMainApplication
+namespace BankingMainApplication.Services.Transaction
 {
-    public class Account
+    internal class Class1
     {
     }
 }
