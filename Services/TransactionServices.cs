@@ -1,6 +1,10 @@
 ﻿namespace BankingMainApplication.Services
 {
-    public class TransactionService : ITransactionService
+    public static class TransactionService
     {
+        public static void GetTransactionDetails()
+        {
+            Console.WriteLine("GetTransactionDetails");
+        }
     }
 }
