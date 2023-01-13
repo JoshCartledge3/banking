@@ -1,0 +1,15 @@
+C:\Users\jcartledge\Documents\Test\BankingMainApplication\bin\Debug\net6.0\BankingMainApplication.exe
+C:\Users\jcartledge\Documents\Test\BankingMainApplication\bin\Debug\net6.0\BankingMainApplication.deps.json
+C:\Users\jcartledge\Documents\Test\BankingMainApplication\bin\Debug\net6.0\BankingMainApplication.runtimeconfig.json
+C:\Users\jcartledge\Documents\Test\BankingMainApplication\bin\Debug\net6.0\BankingMainApplication.dll
+C:\Users\jcartledge\Documents\Test\BankingMainApplication\bin\Debug\net6.0\BankingMainApplication.pdb
+C:\Users\jcartledge\Documents\Test\BankingMainApplication\obj\Debug\net6.0\BankingMainApplication.csproj.AssemblyReference.cache
+C:\Users\jcartledge\Documents\Test\BankingMainApplication\obj\Debug\net6.0\BankingMainApplication.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\jcartledge\Documents\Test\BankingMainApplication\obj\Debug\net6.0\BankingMainApplication.AssemblyInfoInputs.cache
+C:\Users\jcartledge\Documents\Test\BankingMainApplication\obj\Debug\net6.0\BankingMainApplication.AssemblyInfo.cs
+C:\Users\jcartledge\Documents\Test\BankingMainApplication\obj\Debug\net6.0\BankingMainApplication.csproj.CoreCompileInputs.cache
+C:\Users\jcartledge\Documents\Test\BankingMainApplication\obj\Debug\net6.0\BankingMainApplication.dll
+C:\Users\jcartledge\Documents\Test\BankingMainApplication\obj\Debug\net6.0\refint\BankingMainApplication.dll
+C:\Users\jcartledge\Documents\Test\BankingMainApplication\obj\Debug\net6.0\BankingMainApplication.pdb
+C:\Users\jcartledge\Documents\Test\BankingMainApplication\obj\Debug\net6.0\BankingMainApplication.genruntimeconfig.cache
+C:\Users\jcartledge\Documents\Test\BankingMainApplication\obj\Debug\net6.0\ref\BankingMainApplication.dll
