@@ -7,8 +7,7 @@
     }
 }
 
-Console.ForegroundColor = ConsoleColor.Black;
-Console.BackgroundColor= ConsoleColor.Green;
+Console.ForegroundColor = ConsoleColor.Green;
 Console.Write("Loading");
 Loading(5);
 await Task.Delay(2000);
