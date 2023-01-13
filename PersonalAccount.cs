@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BankingMainApplication
 {
-    internal class PersonalAccount
+    public class PersonalAccount : Account
     {
     }
 }
