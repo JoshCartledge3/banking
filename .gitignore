@@ -9,7 +9,11 @@
 *.user
 *.userosscache
 *.sln.docstates
-
+*.dtbcache.v2
+*.Debug
+BankingMainApplication.csproj.nuget.dgspec.json
+BankingMainApplication.csproj.nuget.g.props
+projects.assets.json
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
 
