@@ -1,6 +1,6 @@
 ﻿namespace BankingMainApplication.Services
 {
-    public class ValidationService
+    public class ValidationService: IValidationService
     {
     }
 }
