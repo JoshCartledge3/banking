@@ -1,6 +1,10 @@
 ﻿namespace BankingMainApplication.Services
 {
-    public class AccountService : IAccountService
+    public static class AccountService
     {
+        public static void GetAccountDetails()
+        {
+            Console.WriteLine("GetAccountDetails");
+        }
     }
 }

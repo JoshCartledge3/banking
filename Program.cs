@@ -1,29 +1,20 @@
-﻿async static void Loading(int time)
+﻿using BankingMainApplication.Services;
+
+namespace BankingMainApplication
 {
-    for (int i = 0; i < time; i++)
+    public static class Program
     {
-        await Task.Delay(300);
-        Console.Write(".");
+        public static void Main(string[] args)
+        {
+            Console.ForegroundColor = ConsoleColor.Green;
+
+
+            Console.WriteLine("This is a banking application.");
+
+            TransactionService.GetTransactionDetails();
+            AccountService.GetAccountDetails();
+            ValidationService.GetValidationDetails();
+        }
+
     }
-}
-
-Console.ForegroundColor = ConsoleColor.Green;
-Console.Write("Loading");
-Loading(5);
-await Task.Delay(2000);
-Console.WriteLine();
-bool continueRunning = true;
-
-while (continueRunning)
-{
-
-
-
-
-
-
-
-
-    Console.Write("Continue? Y/N: ");
-    if (Console.ReadLine() == "n") continueRunning = false;
 }
