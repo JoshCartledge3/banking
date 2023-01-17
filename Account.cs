@@ -8,5 +8,14 @@ namespace BankingMainApplication
 {
     public class Account
     {
+        // Requirements
+        public const int MinimumDeposit = 1;
+
+        // User information
+        public int AccountID;
+        public int Balance;
+        public string Forename = "";
+        public string Surname = "";
+        public int DateOfBirth;
     }
 }
