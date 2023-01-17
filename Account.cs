@@ -1,12 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace BankingMainApplication
+﻿namespace BankingMainApplication
 {
     public class Account
     {
+        // Requirements
+        public const int MinimumDeposit = 1;
+
+        // User Information
+        public int AccountId { get; set; }
+        public int Balance { get; set; }
+        public string? Forename { get; set; }
+        public string? Surname { get; set; }
+        public DateOnly DateOfBirth { get; set; }
     }
 }

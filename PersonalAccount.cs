@@ -1,12 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿
 namespace BankingMainApplication
 {
     public class PersonalAccount : Account
     {
+        // Standard customer account attributes
+        public bool ResidentOrCrownServant { get; set; }
+        public const int DailyOverdraftFee = 5;
     }
 }
