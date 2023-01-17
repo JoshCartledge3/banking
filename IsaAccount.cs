@@ -1,7 +1,7 @@
 ﻿
 namespace BankingMainApplication
 {
-    public class ISAAccount : Account
+    public class IsaAccount : Account
     {
         // Standard ISA Account attributes
         // Age conditions
@@ -10,10 +10,10 @@ namespace BankingMainApplication
 
         // Interest and Bonus rates
         public const float InterestRate = 2.7f;
-        public const float EarlyWithdrawlFee = 0.25f;
-        public const float AnnualBonus = EarlyWithdrawlFee;
+        public const float EarlyWithdrawalFee = 0.25f;
+        public const float AnnualBonus = 0.25f;
 
-        // Accepted withdrawl conditions
-        public string[] AcceptedWithdrawlConditions = { "Terminal", "Retirement", "First Home" };
+        // Accepted withdrawal conditions
+        public string[] AcceptedWithdrawalConditions = { "Terminal", "Retirement", "First Home" };
     }
 }
