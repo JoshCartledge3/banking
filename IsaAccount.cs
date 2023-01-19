@@ -1,7 +1,7 @@
 ﻿
 namespace BankingMainApplication
 {
-    public class IsaAccount : Account
+    public class ISAAccount : Account
     {
         // Standard ISA Account attributes
         // Age conditions
