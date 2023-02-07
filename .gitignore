@@ -291,3 +291,6 @@ __pycache__/
 project.lock.json
 project.assets.json
 /.vs/BankingMainApplication/v17/.suo
+
+/obj/*
+/bin/*
