@@ -290,3 +290,4 @@ __pycache__/
 # format (NuGet v4 and .NET Core).
 project.lock.json
 project.assets.json
+/.vs/BankingMainApplication/v17/.suo
