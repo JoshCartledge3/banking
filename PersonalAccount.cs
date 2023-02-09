@@ -39,12 +39,11 @@ namespace BankingMainApplication
                 DateOfBirth = dateOfBirth
             };
 
-            // Initialize an error list
-            List<int> errorList = new();
             if (newPersonalAccount.Balance < MinimumDeposit) errorList.Add(1);
-            else if (string.IsNullOrWhiteSpace(newPersonalAccount.Forename)) errorList.Add(2);
-            else if (string.IsNullOrWhiteSpace(newPersonalAccount.Surname)) errorList.Add(3);
-            else if (!ValidationService.BasicVerification()) errorList.Add(4);
+            if (string.IsNullOrWhiteSpace(newPersonalAccount.Forename)) errorList.Add(2);
+            if (string.IsNullOrWhiteSpace(newPersonalAccount.Surname)) errorList.Add(3);
+            if (!ValidationService.BasicVerification()) errorList.Add(4);
+
 
             // If the object is complete, verify the user and write their account to CSV
             if (errorList.Count == 0 && ValidationService.BasicVerification())
