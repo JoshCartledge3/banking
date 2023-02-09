@@ -4,6 +4,9 @@ namespace BankingMainApplication
     public class ISAAccount : Account
     {
         // Standard ISA Account attributes
+        // Residential Status
+        public bool ResidentOrCrownServant { get; set; }
+
         // Age conditions
         public const int MinimumAge = 18;
         public const int MaximumAge = 40;

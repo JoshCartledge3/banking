@@ -15,22 +15,16 @@
         /// <returns>True if all checks pass</returns>
         public static bool BasicVerification()
         {
-            bool areChecksPassed;
-            string[] basicChecks = new string[3];
+            string[] basicChecks = new string[2];
 
             // Prompt user with verification questions
             Console.WriteLine("Has the applicant presented a valid photo ID? [Y/N]");
             basicChecks[0] = Console.ReadLine().ToLower();
             Console.WriteLine("Has the applicant presented a valid address-based ID? [Y/N]");
             basicChecks[1] = Console.ReadLine().ToLower();
-            Console.WriteLine("Has the applicant made a minimum deposit of £1.00? [Y/N]");
-            basicChecks[2] = Console.ReadLine().ToLower();
 
-            areChecksPassed = basicChecks.SequenceEqual(new string[] { "y", "y", "y" });
-            return areChecksPassed;
+            return basicChecks.SequenceEqual(new string[] { "y", "y"});
         }
-
-        #endregion
 
         /// <summary>
         /// Verification process for an applicant attempting to open a personal account
@@ -58,5 +52,7 @@
         {
             return BasicVerification();
         }
+
+        #endregion
     }
 }
