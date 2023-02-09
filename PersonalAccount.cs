@@ -22,7 +22,7 @@ namespace BankingMainApplication
             double initialDeposit;
             do
             {
-                Console.Write("Initial Deposit: ");
+                Console.Write("Initial Deposit: £");
                 double.TryParse(Console.ReadLine(), out initialDeposit);
             } while (initialDeposit.GetType().ToString() == "double");
 
@@ -32,7 +32,7 @@ namespace BankingMainApplication
             // Create a new instance of a personal account
             Account newPersonalAccount = new Account
             {
-                AccountId = CreateNewAccountID(forename, surname, dateOfBirth),
+                AccountId = Guid.NewGuid().ToString(),
                 Balance = initialDeposit,
                 Forename = forename,
                 Surname = surname,
@@ -41,9 +41,10 @@ namespace BankingMainApplication
 
             // Initialize an error list
             List<int> errorList = new();
-            if (newPersonalAccount.Balance < 1.00) errorList.Add(1);
+            if (newPersonalAccount.Balance < MinimumDeposit) errorList.Add(1);
             else if (string.IsNullOrWhiteSpace(newPersonalAccount.Forename)) errorList.Add(2);
             else if (string.IsNullOrWhiteSpace(newPersonalAccount.Surname)) errorList.Add(3);
+            else if (!ValidationService.BasicVerification()) errorList.Add(4);
 
             // If the object is complete, verify the user and write their account to CSV
             if (errorList.Count == 0 && ValidationService.BasicVerification())
@@ -72,6 +73,9 @@ namespace BankingMainApplication
                             break;
                         case 3:
                             Console.WriteLine("- No surname was entered.");
+                            break;
+                        case 4:
+                            Console.WriteLine("- Invalid/No ID was presented.");
                             break;
                         default:
                             break;
