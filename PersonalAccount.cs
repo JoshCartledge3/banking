@@ -22,7 +22,7 @@ namespace BankingMainApplication
             double initialDeposit;
             do
             {
-                Console.Write("Initial Deposit: ");
+                Console.Write("Initial Deposit: £");
                 double.TryParse(Console.ReadLine(), out initialDeposit);
             } while (initialDeposit.GetType().ToString() == "double");
 
@@ -42,8 +42,8 @@ namespace BankingMainApplication
             // Initialize an error list
             List<int> errorList = new();
             if (newPersonalAccount.Balance < 1.00) errorList.Add(1);
-            else if (string.IsNullOrWhiteSpace(newPersonalAccount.Forename)) errorList.Add(2);
-            else if (string.IsNullOrWhiteSpace(newPersonalAccount.Surname)) errorList.Add(3);
+            if (string.IsNullOrWhiteSpace(newPersonalAccount.Forename)) errorList.Add(2);
+            if (string.IsNullOrWhiteSpace(newPersonalAccount.Surname)) errorList.Add(3);
 
             // If the object is complete, verify the user and write their account to CSV
             if (errorList.Count == 0 && ValidationService.BasicVerification())

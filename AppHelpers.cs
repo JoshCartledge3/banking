@@ -30,7 +30,7 @@
             string? input;
             do
             {
-                Console.WriteLine(query);
+                Console.Write(query);
                 input = Console.ReadLine();
             } while (!int.TryParse(input, out int result));
             return Convert.ToInt32(input);
