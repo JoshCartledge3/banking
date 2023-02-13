@@ -32,7 +32,7 @@ namespace BankingMainApplication
             // Create a new instance of a personal account
             Account newPersonalAccount = new Account
             {
-                AccountId = Guid.NewGuid().ToString(),
+                AccountId = Guid.NewGuid(),
                 Balance = initialDeposit,
                 Forename = forename,
                 Surname = surname,
