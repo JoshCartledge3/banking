@@ -24,8 +24,7 @@ namespace BankingMainApplication
                     break;
                 case "2":
                     // TODO Make each case here open a new menu
-                    PersonalAccount.CreatePersonalAccount();
-                    foreach (var item in Account.ViewAccount("c054e17f-5c6f-4c2b-8e71-c37eada6edaf", "PersonalAccounts")) Console.Write(item);
+                    BusinessAccount.CreateBusinessAccount();
                     break;
                 case "3":
                     // Perform and display the result of the validation attempt (Test)
@@ -37,7 +36,7 @@ namespace BankingMainApplication
 
             // This'll just keep running so it's less annoying than having to constantly run the app
             Console.WriteLine();
-            Main(new string[] {"test"});
+            Main(new string[] { "test" });
         }
     }
 }
