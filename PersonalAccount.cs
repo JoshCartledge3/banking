@@ -30,9 +30,9 @@ namespace BankingMainApplication
             DateOnly dateOfBirth = AppHelpers.StringToDateOnly();
 
             // Create a new instance of a personal account
-            Account newPersonalAccount = new Account
+            PersonalAccount newPersonalAccount = new PersonalAccount
             {
-                AccountId = Guid.NewGuid().ToString(),
+                AccountId = Guid.NewGuid(),
                 Balance = initialDeposit,
                 Forename = forename,
                 Surname = surname,

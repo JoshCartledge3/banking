@@ -297,3 +297,6 @@ project.assets.json
 /obj/Debug/net6.0/BankingMainApplication.csproj.CoreCompileInputs.cache
 /.vs/BankingMainApplication/DesignTimeBuild/.dtbcache.v2
 /.gitignore
+/.vs/ProjectEvaluation/bankingmainapplication.metadata.v5.2
+/.vs/BankingMainApplication/v17/.futdcache.v2
+/.vs/ProjectEvaluation/bankingmainapplication.projects.v5.2
