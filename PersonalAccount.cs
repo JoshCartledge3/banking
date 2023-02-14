@@ -51,8 +51,8 @@ namespace BankingMainApplication
             {
                 using (StreamWriter sw = File.AppendText("PersonalAccounts.csv"))
                 {
-                    sw.WriteLine($"{newPersonalAccount.AccountId}, {newPersonalAccount.Forename}," +
-                                 $"{newPersonalAccount.Surname}, {newPersonalAccount.DateOfBirth}, " +
+                    sw.WriteLine($"{newPersonalAccount.AccountId},{newPersonalAccount.Forename}," +
+                                 $"{newPersonalAccount.Surname},{newPersonalAccount.DateOfBirth}," +
                                  $"{newPersonalAccount.Balance}");
                 }
                 Console.WriteLine("Account creation successful.");
