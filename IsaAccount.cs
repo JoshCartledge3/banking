@@ -1,5 +1,6 @@
 ﻿
 using BankingMainApplication.Services;
+using System.ComponentModel;
 using System.Diagnostics.CodeAnalysis;
 
 namespace BankingMainApplication
@@ -114,6 +115,8 @@ namespace BankingMainApplication
             {
                 // Do nothing
             }
+            if (string.IsNullOrWhiteSpace(newISAAccount.Forename)) errorList.Add(5);
+            if (string.IsNullOrWhiteSpace(newISAAccount.Surname)) errorList.Add(6);
 
             // If the object is complete, verify the business and write their account to CSV
             if (errorList.Count == 0)
@@ -146,6 +149,12 @@ namespace BankingMainApplication
                             break;
                         case 4:
                             Console.WriteLine("- Customers may only have one ISA account.");
+                            break;
+                        case 5:
+                            Console.WriteLine("- No forename was entered.");
+                            break;
+                        case 6:
+                            Console.WriteLine("- No surname was entered.");
                             break;
                         default:
                             break;
