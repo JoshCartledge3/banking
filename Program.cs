@@ -24,7 +24,7 @@ namespace BankingMainApplication
                     break;
                 case "2":
                     // TODO Make each case here open a new menu
-                    BusinessAccount.CreateBusinessAccount();
+                    ISAAccount.CreateISAAccount();
                     break;
                 case "3":
                     // Perform and display the result of the validation attempt (Test)

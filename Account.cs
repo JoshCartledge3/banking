@@ -35,7 +35,6 @@
                 return new string[] { "Database could not be reached." };
             }
         }
-
         #endregion
     }
 }

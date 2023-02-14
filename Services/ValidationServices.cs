@@ -18,9 +18,9 @@
             string[] basicChecks = new string[2];
 
             // Prompt user with verification questions
-            Console.WriteLine("Has the applicant presented a valid photo ID? [Y/N]");
+            Console.Write("Has the applicant presented a valid photo ID? [Y/N]: ");
             basicChecks[0] = Console.ReadLine().ToLower();
-            Console.WriteLine("Has the applicant presented a valid address-based ID? [Y/N]");
+            Console.Write("Has the applicant presented a valid address-based ID? [Y/N]: ");
             basicChecks[1] = Console.ReadLine().ToLower();
 
             return basicChecks.SequenceEqual(new string[] { "y", "y"});

@@ -63,8 +63,8 @@ namespace BankingMainApplication
             {
                 using (StreamWriter sw = File.AppendText("BusinessAccounts.csv"))
                 {
-                    sw.WriteLine($"{newBusinessAccount.AccountId}, {newBusinessAccount.BusinessName}," +
-                                 $"{newBusinessAccount.BusinessType}, {newBusinessAccount.RegistryDate}, " +
+                    sw.WriteLine($"{newBusinessAccount.AccountId},{newBusinessAccount.BusinessName}," +
+                                 $"{newBusinessAccount.BusinessType},{newBusinessAccount.RegistryDate}," +
                                  $"{newBusinessAccount.Balance}");
                 }
                 Console.WriteLine("Account creation successful.");
