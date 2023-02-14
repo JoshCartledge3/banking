@@ -1,4 +1,7 @@
-﻿using BankingMainApplication.Services;
+﻿using System;
+using System.Collections.Generic;
+using System.IO;
+using BankingMainApplication.Services;
 
 namespace BankingMainApplication
 {
@@ -12,7 +15,7 @@ namespace BankingMainApplication
         public const int AnnualAccountFee = 120;
 
         // If a business is any of the below type, it does not qualify for for a business account
-        public static string[] ExcludedBusinesses = { "Enterprise", "PLC", "Charity", "Public Sector" };
+        private static readonly List<string> ExcludedBusinesses = new List<string>{ "Enterprise", "PLC", "Charity", "Public Sector" };
 
         /// <summary>
         /// Creates a new business account
@@ -21,11 +24,11 @@ namespace BankingMainApplication
         {
             // Get business details
             Console.Write("Business name: ");
-            string? businessName = Console.ReadLine();
+            var businessName = Console.ReadLine() ?? throw new Exception("You must provided a business name.");
             Console.Write("Business type: ");
-            string? businessType = Console.ReadLine();
+            var businessType = Console.ReadLine()  ?? throw new Exception("You must provided a business name.");
             Console.WriteLine("Business Registry Date: ");
-            DateOnly registryDate = AppHelpers.StringToDateOnly();
+            var registryDate = AppHelpers.StringToDateOnly();
 
             // Create a new instance of a business account
             BusinessAccount newBusinessAccount = new BusinessAccount()

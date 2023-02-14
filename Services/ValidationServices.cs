@@ -1,4 +1,7 @@
-﻿namespace BankingMainApplication.Services
+﻿using System;
+using System.Linq;
+
+namespace BankingMainApplication.Services
 {
     public static class ValidationService
     {
@@ -15,15 +18,31 @@
         /// <returns>True if all checks pass</returns>
         public static bool BasicVerification()
         {
-            string[] basicChecks = new string[2];
+            string[] validInputs = { "y", "n" };
 
             // Prompt user with verification questions
-            Console.Write("Has the applicant presented a valid photo ID? [Y/N]: ");
-            basicChecks[0] = Console.ReadLine().ToLower();
-            Console.Write("Has the applicant presented a valid address-based ID? [Y/N]: ");
-            basicChecks[1] = Console.ReadLine().ToLower();
+            Console.WriteLine("Has the applicant presented a valid photo ID? [Y/N]");
+            var photoIdAnswer = Console.ReadLine() ?? "";
+            var validPhotoId = ValidateReadLineInput(photoIdAnswer, validInputs);
 
-            return basicChecks.SequenceEqual(new string[] { "y", "y"});
+            Console.WriteLine("Has the applicant presented a valid address-based ID? [Y/N]");
+            var proofOfAddressAnswer = Console.ReadLine() ?? "";
+            var validProofOfAddress = ValidateReadLineInput(proofOfAddressAnswer, validInputs);
+
+            return false;
+        }
+
+        private static string ValidateReadLineInput(string? input, string[] validInputs)
+        {
+            if (input == null) throw new Exception("Please provide an answer.");
+
+            while (!validInputs.Contains(input.ToLower()))
+            {
+                Console.WriteLine("Please enter a valid answer");
+                input = Console.ReadLine() ?? "";
+            }
+
+            return input;
         }
 
         /// <summary>

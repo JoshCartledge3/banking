@@ -1,4 +1,6 @@
-﻿namespace BankingMainApplication
+﻿using System;
+
+namespace BankingMainApplication
 {
     public class AppHelpers
     {
