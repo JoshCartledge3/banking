@@ -33,7 +33,7 @@ namespace BankingMainApplication
             DateOnly dateOfBirth = AppHelpers.StringToDateOnly();
 
             // Create a new instance of a personal account
-            Account newPersonalAccount = new Account
+            PersonalAccount newPersonalAccount = new PersonalAccount
             {
                 AccountId = Guid.NewGuid(),
                 Balance = initialDeposit,
@@ -52,12 +52,7 @@ namespace BankingMainApplication
             // If the object is complete, verify the user and write their account to CSV
             if (errorList.Count == 0)
             {
-                using (StreamWriter sw = File.AppendText("PersonalAccounts.csv"))
-                {
-                    sw.WriteLine($"{newPersonalAccount.AccountId},{newPersonalAccount.Forename}," +
-                                 $"{newPersonalAccount.Surname},{newPersonalAccount.DateOfBirth}," +
-                                 $"{newPersonalAccount.Balance}");
-                }
+                AccountService.CreateNewPersonalAccount(newPersonalAccount);
                 Console.WriteLine("Account creation successful.");
             }
             // Otherwise, do not create account and display the error

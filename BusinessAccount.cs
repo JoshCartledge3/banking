@@ -45,17 +45,14 @@ namespace BankingMainApplication
             if (ExcludedBusinesses.Contains(businessType) || string.IsNullOrWhiteSpace(businessType)) errorList.Add(1);
             if (string.IsNullOrWhiteSpace(newBusinessAccount.BusinessName)) errorList.Add(2);
 
-            try //to read the file
+            // Read in the list of business accounts
+            List<BusinessAccount> allBusinessAccounts = AccountService.ReadAllBusinessAccounts();
             {
-                foreach (var account in File.ReadAllLines("BusinessAccounts.csv"))
+                foreach (var account in allBusinessAccounts)
                 {
-                    if (account.Contains(newBusinessAccount.BusinessName) && !string.IsNullOrWhiteSpace(newBusinessAccount.BusinessName)) errorList.Add(3);
+                    if ((account.BusinessName == newBusinessAccount.BusinessName) && !string.IsNullOrWhiteSpace(newBusinessAccount.BusinessName)) errorList.Add(3);
                     break;
                 }
-            }
-            catch
-            {
-                // Do nothing
             }
 
             // Perform basic ID verification
@@ -64,13 +61,11 @@ namespace BankingMainApplication
             // If the object is complete, verify the business and write their account to CSV
             if (errorList.Count == 0)
             {
-                using (StreamWriter sw = File.AppendText("BusinessAccounts.csv"))
+                if (errorList.Count == 0)
                 {
-                    sw.WriteLine($"{newBusinessAccount.AccountId},{newBusinessAccount.BusinessName}," +
-                                 $"{newBusinessAccount.BusinessType},{newBusinessAccount.RegistryDate}," +
-                                 $"{newBusinessAccount.Balance}");
+                    AccountService.CreateNewPersonalAccount(newBusinessAccount);
+                    Console.WriteLine("Account creation successful.");
                 }
-                Console.WriteLine("Account creation successful.");
             }
             // Otherwise, do not create account and display the error
             else

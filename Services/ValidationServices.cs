@@ -29,7 +29,7 @@ namespace BankingMainApplication.Services
             var proofOfAddressAnswer = Console.ReadLine() ?? "";
             var validProofOfAddress = ValidateReadLineInput(proofOfAddressAnswer, validInputs);
 
-            return false;
+            return (validPhotoId == "y" && validProofOfAddress == "y");
         }
 
         private static string ValidateReadLineInput(string? input, string[] validInputs)

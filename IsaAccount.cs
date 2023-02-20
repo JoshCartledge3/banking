@@ -33,39 +33,30 @@ namespace BankingMainApplication
             bool hasPersonalAccount = Console.ReadLine().ToLower() == "y" ? true: false;
 
             ISAAccount newISAAccount = new ISAAccount();
-            string[] dob = new string [3];
 
             if (hasPersonalAccount)
             {
                 Console.Write("Enter account ID: ");
                 string accountID = Console.ReadLine();
 
-                try // to read the file
-                {
-                    // Find the account
-                    foreach (var account in File.ReadAllLines("PersonalAccounts.csv"))
-                    {
-                        
-                        if (accountID == account.Split(',')[0])
-                        {
-                            // Store the values
-                            List<string> values = account.Split(',').ToList();
-                            dob = values[3].Split("/");
+                // Read all ISA accounts
+                List<PersonalAccount> allPersonalAccounts = AccountService.ReadAllPersonalAccounts();
 
-                            // Set values
-                            newISAAccount.AccountId = Guid.NewGuid();
-                            newISAAccount.Forename = values[1];
-                            newISAAccount.Surname = values[2];
-                            newISAAccount.DateOfBirth = new DateOnly(Convert.ToInt32(dob[2]), Convert.ToInt32(dob[1]), Convert.ToInt32(dob[1]));
-                            newISAAccount.Balance = 0;
-                            break;
-                        }
-                    Console.WriteLine("Account not found.");
-                    }
-                }
-                catch
+                // Find the account
+                foreach (var account in allPersonalAccounts)
                 {
-                    Console.WriteLine("Database not found.");
+                    
+                    if (accountID == account.AccountId.ToString())
+                    {
+                        // Set values
+                        newISAAccount.AccountId = Guid.NewGuid();
+                        newISAAccount.Forename = account.Forename;
+                        newISAAccount.Surname = account.Surname;
+                        newISAAccount.DateOfBirth = account.DateOfBirth;
+                        newISAAccount.Balance = 0;
+                        break;
+                    }
+                Console.WriteLine("Account not found.");
                 }
             }
 
@@ -97,37 +88,32 @@ namespace BankingMainApplication
             if (18 > age || age > 41) errorList.Add(2);
             if (!ValidationService.BasicVerification()) errorList.Add(3);
 
-            try // to read the file
-            {
-                // Tru find the account
-                foreach (var account in File.ReadAllLines("ISAAccounts.csv"))
-                {
+            // Read all ISA accounts
+            List<ISAAccount> allISAAccounts = AccountService.ReadAllISAAccounts();
 
-                    if (account.Contains(newISAAccount.Forename) && account.Contains(newISAAccount.Forename) && account.Contains(newISAAccount.DateOfBirth.ToString()))
-                    {
-                        Console.Write("A user with this name and date of birth already exists, is this a duplicate account? [Y/N]");
-                        bool response = Console.ReadLine().ToLower() == "y";
-                        if (response) errorList.Add(4);
-                    }
+            // Try find the account
+            foreach (var account in allISAAccounts)
+            {
+                if ((account.Forename == newISAAccount.Forename) && (account.Surname == newISAAccount.Surname) && (account.DateOfBirth == newISAAccount.DateOfBirth))
+                {
+                    Console.Write("A user with this name and date of birth already exists, is this a duplicate account? [Y/N]");
+                    bool response = Console.ReadLine().ToLower() == "y";
+                    if (response) errorList.Add(4);
                 }
             }
-            catch
-            {
-                // Do nothing
-            }
+
+
             if (string.IsNullOrWhiteSpace(newISAAccount.Forename)) errorList.Add(5);
             if (string.IsNullOrWhiteSpace(newISAAccount.Surname)) errorList.Add(6);
 
             // If the object is complete, verify the business and write their account to CSV
             if (errorList.Count == 0)
             {
-                using (StreamWriter sw = File.AppendText("ISAAccounts.csv"))
+                if (errorList.Count == 0)
                 {
-                    sw.WriteLine($"{newISAAccount.AccountId},{newISAAccount.Forename}," +
-                                 $"{newISAAccount.Surname},{newISAAccount.DateOfBirth}," +
-                                 $"{newISAAccount.Balance}");
+                    AccountService.CreateNewPersonalAccount(newISAAccount);
+                    Console.WriteLine("Account creation successful.");
                 }
-                Console.WriteLine("Account creation successful.");
             }
 
             // Otherwise, do not create account and display the error
