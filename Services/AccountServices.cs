@@ -157,7 +157,7 @@ namespace BankingMainApplication.Services
             }
         }
 
-        public static void CreateNewPersonalAccount(Account account)
+        public static void CreateNewAccount(Account account)
         {
             if (account is PersonalAccount) db_PersonalAccounts.Add((PersonalAccount) account);
             if (account is BusinessAccount) db_BusinessAccounts.Add((BusinessAccount) account);

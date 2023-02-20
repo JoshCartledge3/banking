@@ -52,7 +52,7 @@ namespace BankingMainApplication
             // If the object is complete, verify the user and write their account to CSV
             if (errorList.Count == 0)
             {
-                AccountService.CreateNewPersonalAccount(newPersonalAccount);
+                AccountService.CreateNewAccount(newPersonalAccount);
                 Console.WriteLine("Account creation successful.");
             }
             // Otherwise, do not create account and display the error

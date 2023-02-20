@@ -63,7 +63,7 @@ namespace BankingMainApplication
             {
                 if (errorList.Count == 0)
                 {
-                    AccountService.CreateNewPersonalAccount(newBusinessAccount);
+                    AccountService.CreateNewAccount(newBusinessAccount);
                     Console.WriteLine("Account creation successful.");
                 }
             }

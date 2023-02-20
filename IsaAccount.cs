@@ -111,7 +111,7 @@ namespace BankingMainApplication
             {
                 if (errorList.Count == 0)
                 {
-                    AccountService.CreateNewPersonalAccount(newISAAccount);
+                    AccountService.CreateNewAccount(newISAAccount);
                     Console.WriteLine("Account creation successful.");
                 }
             }
