@@ -1,5 +1,5 @@
-﻿using System;
-using BankingMainApplication.Services;
+﻿using BankingMainApplication.Services;
+using System.Security.Cryptography.X509Certificates;
 
 namespace BankingMainApplication
 {
@@ -8,6 +8,11 @@ namespace BankingMainApplication
         public static void Main(string[] args)
         {
             Console.ForegroundColor = ConsoleColor.Green;
+
+            // Read 3 databases into variables
+            List<PersonalAccount> db_PersonalAccounts = AccountService.ReadAllPersonalAccounts();
+            List<BusinessAccount> db_BusinessAccounts = AccountService.ReadAllBusinessAccounts();
+            List<ISAAccount> db_ISAAccounts = AccountService.ReadAllISAAccounts();
 
             // Display main menu options
             Console.WriteLine("This is a banking application. What would you like to do?");
@@ -24,7 +29,6 @@ namespace BankingMainApplication
                     TransactionService.GetTransactionDetails();
                     break;
                 case "2":
-                    // TODO Make each case here open a new menu
                     AccountService.CreateAccountMenu();
                     break;
                 case "3":
@@ -34,6 +38,9 @@ namespace BankingMainApplication
                 default:
                     break;
             }
+
+            // Save all database data before exiting
+            AccountService.SaveAllDatabaseData();
 
             // This'll just keep running so it's less annoying than having to constantly run the app
             Console.WriteLine();
